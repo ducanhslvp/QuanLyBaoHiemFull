@@ -1,0 +1,139 @@
+<%@ page import="com.detai10.qlbhxh.model.TaiKhoan" %>
+<%@ page import="com.detai10.qlbhxh.model.TaiKhoan" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Theo dõi danh sách khách hàng sử dụng bảo hiểm</title>
+    <jsp:include page="headWeb.jsp"></jsp:include>
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <jsp:include page="logoWeb.jsp"></jsp:include>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" href="admin">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>TỔNG QUAN</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">
+            Chức năng
+        </div>
+
+        <li class="nav-item active">
+            <a class="nav-link" href="list">
+                <i class="fas fa-fw fa-table"></i>
+                <span>THEO DÕI</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>BÁO CÁO</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Báo cáo theo:</h6>
+                    <a class="collapse-item" href="bcDiaChi">TỈNH-THÀNH PHỐ</a>
+                    <a class="collapse-item" href="thang">THÁNG</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="cauhinh">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>CẤU HÌNH</span></a>
+        </li>
+
+
+        <!-- Divider -->
+        <jsp:include page="header.jsp"></jsp:include>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">THEO DÕI DANH SÁCH KHÁCH HÀNG ĐÓNG BẢO HIỂM</h1>
+                <p class="mb-4">Danh sách khách hàng đóng bảo hiểm</p>
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">DANH SÁCH</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tài khoản</th>
+                                    <th>Họ và tên</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Thông tin</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tài khoản</th>
+                                    <th>Họ và tên</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Thông tin</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <c:forEach var="taikhoan" items="${listtaikhoan}">
+                                    <tr>
+                                        <td><c:out value="${taikhoan.id}" /></td>
+                                        <td><c:out value="${taikhoan.username}" /></td>
+                                        <td><c:out value="${taikhoan.ten}" /></td>
+                                        <td><c:out value="${taikhoan.diaChi}" /></td>
+                                        <td><c:out value="${taikhoan.sdt}" /></td>
+                                        <td>
+                                            <a href="infobaohiem?id=<c:out value='${taikhoan.id}'/>" class="btn btn-secondary"> Chi tiết</a>
+
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <jsp:include page="footer.jsp"></jsp:include>
+
+</body>
+
+</html>
+

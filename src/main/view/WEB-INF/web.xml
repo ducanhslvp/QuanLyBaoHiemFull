@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>CustomerServlet</servlet-name>
+        <servlet-class>com.detai10.qlbhxh.controller.servlet.TaiKhoanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerServlet</servlet-name>
+        <url-pattern>/checkLogin</url-pattern>
+        <url-pattern>/insert</url-pattern>
+        <url-pattern>/out</url-pattern>
+        <url-pattern>/list</url-pattern>
+        <url-pattern>/infoTaiKhoan</url-pattern>
+        <url-pattern>/admin</url-pattern>
+        <url-pattern>/bcDiaChi</url-pattern>
+        <url-pattern>/diaChi</url-pattern>
+        <url-pattern>/thang</url-pattern>
+        <url-pattern>/bcthang</url-pattern>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>BaoHiemServlet</servlet-name>
+        <servlet-class>com.detai10.qlbhxh.controller.servlet.BaoHiemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BaoHiemServlet</servlet-name>
+        <url-pattern>/infobaohiem</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GoiBaoHiemServlet</servlet-name>
+        <servlet-class>com.detai10.qlbhxh.controller.servlet.GoiBaoHiemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GoiBaoHiemServlet</servlet-name>
+        <url-pattern>/cauhinh</url-pattern>
+        <url-pattern>/addGoiBH</url-pattern>
+        <url-pattern>/deleteGoi</url-pattern>
+        <url-pattern>/updateGoi</url-pattern>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
