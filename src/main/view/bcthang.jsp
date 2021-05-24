@@ -114,7 +114,7 @@
                                     <td><c:out value="${baoCao.thangConLai}" /></td>
                                     <td>
                                         <div class="progress mb-4">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width:<c:out value='${baoCao.mucDo}'/>%"
+                                            <div class="progress-bar bg-info" role="progressbar" style="width:<c:out value='${baoCao.mucDo}'/>%"
                                                  aria-valuenow="<c:out value='${baoCao.mucDo}'/>" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </td>

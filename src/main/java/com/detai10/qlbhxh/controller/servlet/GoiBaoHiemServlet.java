@@ -37,6 +37,7 @@ public class GoiBaoHiemServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        checkAlreadyLoggedIn(request, response);
         String action = request.getServletPath();
 
         try {

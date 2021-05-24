@@ -2,6 +2,7 @@ package com.detai10.qlbhxh.controller.impl;
 
 import com.detai10.qlbhxh.controller.dao.TaiKhoanDAO;
 import com.detai10.qlbhxh.model.TaiKhoan;
+import org.junit.Test;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,6 +35,13 @@ public class TaiKhoanDAOImpl extends ConnectionDAO implements TaiKhoanDAO {
 
 		return taiKhoan;
 	}
+	@Test
+	public void Test1(){
+		TaiKhoan taiKhoan=new TaiKhoan(1,"abc","abc","ducanh","hanoi","0945345","1");
+		System.out.println(checkLogin(taiKhoan));
+	}
+
+
 	public List<TaiKhoan> getListTaiKhoan() {
 		List<TaiKhoan> taiKhoans = new ArrayList<>();
 		ResultSet rs = null;

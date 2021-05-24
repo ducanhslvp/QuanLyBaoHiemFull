@@ -44,4 +44,14 @@ public class GoiBaoHiem {
     public void setThoiGian(int thoiGian) {
         this.thoiGian = thoiGian;
     }
+
+    @Override
+    public String toString() {
+        return "GoiBaoHiem{" +
+                "id=" + id +
+                ", ten='" + ten + '\'' +
+                ", tien=" + tien +
+                ", thoiGian=" + thoiGian +
+                '}';
+    }
 }

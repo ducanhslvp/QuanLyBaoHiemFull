@@ -2,6 +2,7 @@ package com.detai10.qlbhxh.controller.impl;
 
 import com.detai10.qlbhxh.controller.dao.GoiBaoHiemDAO;
 import com.detai10.qlbhxh.model.GoiBaoHiem;
+import org.junit.Test;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,6 +32,7 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
         }
         return listGoiBH;
     }
+
     public void addGoiBH(GoiBaoHiem goiBaoHiem) {
 		// TODO - implement CustomerDAOImpl.addCustomer
 		String sql = "INSERT INTO `goibaohiem` (`Ten`, `Tien`, `ThoiGian`) VALUES (?,?,?)";
@@ -77,5 +79,6 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
         }
         return kt;
     }
+
 
 }

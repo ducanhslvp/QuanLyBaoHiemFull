@@ -107,8 +107,8 @@
                                         <td>
                                             <a href="updateGoi?id=<c:out value='${taikhoan.id}'/>"
                                                class="btn btn-dark">Sửa</a>
-                                            <a href="deleteGoi?id=<c:out value='${taikhoan.id}'/>"
-                                               class="btn btn-danger">Xoá</a>
+                                            <a class="btn btn-danger" href="deleteGoi?id=<c:out value='${taikhoan.id}'/>">Xóa</a>
+
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -130,5 +130,25 @@
         <jsp:include page="footer.jsp"></jsp:include>
 
 </body>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bạn muốn xóa gói bảo hiểm?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Chọn "Có" để xóa</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Không</button>
+                <a class="btn btn-danger" href="deleteGoi?id=<c:out value='${taikhoan.id}'/>">Có</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 </html>

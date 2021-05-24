@@ -54,4 +54,15 @@ public class BaoCao {
     public void setMucDo(float mucDo) {
         this.mucDo = mucDo;
     }
+
+    @Override
+    public String toString() {
+        return "BaoCao{" +
+                "taiKhoan=" + taiKhoan +
+                ", baoHiem=" + baoHiem +
+                ", goiBaoHiem=" + goiBaoHiem +
+                ", thangConLai=" + thangConLai +
+                ", mucDo=" + mucDo +
+                '}';
+    }
 }

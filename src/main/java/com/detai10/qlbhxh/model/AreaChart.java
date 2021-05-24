@@ -44,4 +44,14 @@ public class AreaChart {
     public void setSoKH(int soKH) {
         this.soKH = soKH;
     }
+
+    @Override
+    public String toString() {
+        return "AreaChart{" +
+                "thang='" + thang + '\'' +
+                ", tien=" + tien +
+                ", diaChi='" + diaChi + '\'' +
+                ", soKH=" + soKH +
+                '}';
+    }
 }

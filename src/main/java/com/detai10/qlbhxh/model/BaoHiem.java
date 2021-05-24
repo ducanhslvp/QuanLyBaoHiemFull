@@ -65,4 +65,16 @@ public class BaoHiem {
 	public void setNgayDong(String ngayDong) {
 		this.ngayDong = ngayDong;
 	}
+
+	@Override
+	public String toString() {
+		return "BaoHiem{" +
+				"id=" + id +
+				", taiKhoanID=" + taiKhoanID +
+				", goiBaoHiem=" + goiBaoHiem +
+				", soTien=" + soTien +
+				", loai='" + loai + '\'' +
+				", ngayDong='" + ngayDong + '\'' +
+				'}';
+	}
 }

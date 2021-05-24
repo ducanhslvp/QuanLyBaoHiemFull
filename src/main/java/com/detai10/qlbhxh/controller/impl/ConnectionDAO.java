@@ -1,5 +1,7 @@
 package com.detai10.qlbhxh.controller.impl;
 
+import org.junit.Test;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 

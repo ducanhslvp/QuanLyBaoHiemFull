@@ -81,4 +81,17 @@ public class TaiKhoan {
 	public void setLoai(String loai) {
 		this.loai = loai;
 	}
+
+	@Override
+	public String toString() {
+		return "TaiKhoan{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", password='" + password + '\'' +
+				", ten='" + ten + '\'' +
+				", diaChi='" + diaChi + '\'' +
+				", sdt='" + sdt + '\'' +
+				", loai='" + loai + '\'' +
+				'}';
+	}
 }
