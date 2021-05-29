@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface TaiKhoanDAO {
 	TaiKhoan checkLogin(TaiKhoan taiKhoanCheck);
-
-	void addCustomer(TaiKhoan taiKhoan);
 	List<TaiKhoan> getListTaiKhoan();
 
     List<String> getListDiaChi();

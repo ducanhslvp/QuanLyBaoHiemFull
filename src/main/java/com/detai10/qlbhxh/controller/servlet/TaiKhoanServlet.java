@@ -27,7 +27,13 @@ public class TaiKhoanServlet extends HttpServlet {
     private BaoHiemDAO baoHiemDAO=new BaoHiemDAOImpl();
     private List<TaiKhoan> listTaiKhoans = taiKhoanDAO.getListTaiKhoan();
     HttpSession session;
-    public void init() {
+
+    public void SetSession() {
+        TaiKhoan taiKhoan=new TaiKhoan();
+        taiKhoan.setUsername("a");
+        taiKhoan.setPassword("a");
+        taiKhoanDAO.checkLogin(taiKhoan);
+        session.setAttribute("customer", taiKhoanDAO.checkLogin(taiKhoan));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

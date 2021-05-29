@@ -2,8 +2,10 @@ package com.detai10.qlbhxh.controller.servlet;
 
 import com.detai10.qlbhxh.controller.dao.BaoHiemDAO;
 import com.detai10.qlbhxh.controller.dao.GoiBaoHiemDAO;
+import com.detai10.qlbhxh.controller.dao.TaiKhoanDAO;
 import com.detai10.qlbhxh.controller.impl.BaoHiemDAOImpl;
 import com.detai10.qlbhxh.controller.impl.GoiBaoHiemDAOImpl;
+import com.detai10.qlbhxh.controller.impl.TaiKhoanDAOImpl;
 import com.detai10.qlbhxh.model.GoiBaoHiem;
 import com.detai10.qlbhxh.model.TaiKhoan;
 
@@ -25,6 +27,16 @@ public class GoiBaoHiemServlet extends HttpServlet {
     private int idGoi;
     private boolean ktDelete=true;
     HttpSession session;
+
+    public void SetSession() {
+        TaiKhoan taiKhoan=new TaiKhoan();
+        taiKhoan.setUsername("a");
+        taiKhoan.setPassword("a");
+        TaiKhoanDAO taiKhoanDAO=new TaiKhoanDAOImpl();
+        System.out.println( taiKhoanDAO.checkLogin(taiKhoan)+"set sesion");
+        session.setAttribute("customer", taiKhoanDAO.checkLogin(taiKhoan));
+    }
+
     public void init() {
     }
 

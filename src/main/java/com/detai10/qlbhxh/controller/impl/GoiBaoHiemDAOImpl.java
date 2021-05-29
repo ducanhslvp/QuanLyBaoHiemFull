@@ -33,6 +33,7 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
         return listGoiBH;
     }
 
+
     public void addGoiBH(GoiBaoHiem goiBaoHiem) {
 		// TODO - implement CustomerDAOImpl.addCustomer
 		String sql = "INSERT INTO `goibaohiem` (`Ten`, `Tien`, `ThoiGian`) VALUES (?,?,?)";
@@ -49,6 +50,8 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
 			e.printStackTrace();
 		}
 	}
+
+
     public void updateGoiBH(GoiBaoHiem goiBaoHiem) {
         // TODO - implement CustomerDAOImpl.addCustomer
         String sql = "UPDATE `goibaohiem` SET `Ten` = ?, `Tien` = ?, `ThoiGian` = ? WHERE (`Id` = ?)";
@@ -65,6 +68,7 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
             e.printStackTrace();
         }
     }
+
     public boolean deleteGoiBH(int id) {
         // TODO - implement CustomerDAOImpl.addCustomer
         String sql = "DELETE FROM goibaohiem WHERE id=?";

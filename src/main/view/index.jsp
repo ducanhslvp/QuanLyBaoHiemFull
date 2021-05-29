@@ -50,7 +50,7 @@
                                         <input type="password" name="password" class="form-control form-control-user"
                                                required="required" placeholder="Nhập mật khẩu">
                                     </div>
-                                    <h6 style="color:red;">${message}</h6>
+                                    <h6 name="fail" style="color:red;">${message}</h6>
                                     <br>
                                     <button type="submit" class="btn btn-primary btn-user btn-block">Đăng nhập</button>
 
