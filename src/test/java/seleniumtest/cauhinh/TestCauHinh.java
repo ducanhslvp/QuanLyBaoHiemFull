@@ -17,17 +17,18 @@ public class TestCauHinh {
     GoiBaoHiemServlet goiBaoHiemServlet=new GoiBaoHiemServlet();
 
     @Test
-    @Rollback(true)
     public void TestDeleteOk(){
 
         try {
             List<WebElement> elements = driver.findElements(By.cssSelector("a[class*=btn-danger]"));
-            elements.get(5).click();
+            elements.get(4).click();
 
-            String text = driver.findElement(By.cssSelector("h6")).getText();
+            List<WebElement> elements2 = driver.findElements(By.cssSelector("a[class*=btn-danger]"));
 
-            if (text.equals("")) System.out.println("Passed");
-            else System.out.println("Fail");
+            if (elements2.size()!=elements.size()){
+                String text = driver.findElement(By.cssSelector("h6[style*=color]")).getText();
+                if (text.equals("")) System.out.println("Passed");
+            } else System.out.println("Fail");
 
         }finally {
         }
@@ -38,14 +39,18 @@ public class TestCauHinh {
         try {
             List<WebElement> elements = driver.findElements(By.cssSelector("a[class*=btn-danger]"));
             elements.get(0).click();
+
+            List<WebElement> elements2 = driver.findElements(By.cssSelector("a[class*=btn-danger]"));
+
+            if (elements2.size()==elements.size()){
+                String text = driver.findElement(By.cssSelector("h6[style*=color]")).getText();
+                if (text.equals("Không thể xóa gói này do! Gói đã nằm trong một bảo hiểm")) System.out.println("Passed");
+
+            } else System.out.println("Fail");
+
         }finally {
 
         }
-        String text = driver.findElement(By.cssSelector("h6")).getText();
-        System.out.println(text);
-
-        if (text.equals("Không thể xóa gói này do! Gói đã nằm trong một bảo hiểm")) System.out.println("Passed");
-        else System.out.println("Fail");
     }
 
     @Before
