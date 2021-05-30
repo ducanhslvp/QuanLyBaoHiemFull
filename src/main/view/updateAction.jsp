@@ -1,4 +1,4 @@
-<%@ page import="com.detai10.qlbhxh.controller.controller.dao.GoiBaoHiemDAO" %>
+<%@ page import="com.detai10.qlbhxh.controller.controller.junittest.dao.GoiBaoHiemDAO" %>
 <%@ page import="com.detai10.qlbhxh.controller.impl.GoiBaoHiemDAOImpl" %>
 <%@ page import="com.detai10.qlbhxh.model.GoiBaoHiem" %><%--
   Created by IntelliJ IDEA.

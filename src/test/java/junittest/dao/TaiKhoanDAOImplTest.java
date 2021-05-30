@@ -1,4 +1,4 @@
-package dao;
+package junittest.dao;
 
 public class TaiKhoanDAOImplTest {
 }

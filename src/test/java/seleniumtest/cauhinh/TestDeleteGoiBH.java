@@ -1,6 +1,9 @@
 package seleniumtest.cauhinh;
 
+import com.detai10.qlbhxh.controller.dao.GoiBaoHiemDAO;
+import com.detai10.qlbhxh.controller.impl.GoiBaoHiemDAOImpl;
 import com.detai10.qlbhxh.controller.servlet.GoiBaoHiemServlet;
+import com.detai10.qlbhxh.model.GoiBaoHiem;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,9 +15,10 @@ import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
 
-public class TestCauHinh {
+public class TestDeleteGoiBH {
     WebDriver driver;
     GoiBaoHiemServlet goiBaoHiemServlet=new GoiBaoHiemServlet();
+    private GoiBaoHiemDAO goiBaoHiemDAO=  new GoiBaoHiemDAOImpl();
 
     @Test
     public void TestDeleteOk(){
@@ -69,9 +73,19 @@ public class TestCauHinh {
         driver.findElement(By.cssSelector("button.btn")).click();
 
         driver.findElement(By.cssSelector("a[href^=cauhinh]")).click();
+
+        System.out.println("Before: ");
+        List<GoiBaoHiem> listGoiBH =goiBaoHiemDAO.getListGoiBH();
+        for (GoiBaoHiem goiBaoHiem:listGoiBH)
+            System.out.println(goiBaoHiem.toString());
     }
     @After
     public void Finish(){
+        System.out.println("After: ");
+        List<GoiBaoHiem> listGoiBH =goiBaoHiemDAO.getListGoiBH();
+        for (GoiBaoHiem goiBaoHiem:listGoiBH)
+            System.out.println(goiBaoHiem.toString());
+
 //        driver.quit();
     }
 }
