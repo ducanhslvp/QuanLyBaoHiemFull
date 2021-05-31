@@ -86,12 +86,12 @@
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <label>Giá tiền:</label> <input type="number" min="1" max="9999999999999" required="required" class="form-control"
-                                           value="<%= ((GoiBaoHiem) request.getAttribute("goiBH")).getTien() %>" name="tien">
+                                <label>Giá tiền:</label> <input type="number" min="1" max="999999999999" required="required" class="form-control"
+                                           value="<%= ((GoiBaoHiem) request.getAttribute("goiBH")).getTien()+"" %>" name="tien">
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <label>Thời gian đóng:</label> <input type="number" min="1" max="99999999" required="required" class="form-control"
+                                <label>Thời gian đóng:</label> <input type="number" min="1" max="999" required="required" class="form-control"
                                            value="<%= ((GoiBaoHiem) request.getAttribute("goiBH")).getThoiGian() %>" name="thoiGian">
                             </fieldset>
 

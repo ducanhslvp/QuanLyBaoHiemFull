@@ -20,16 +20,16 @@ public class UpdateGoiBHTest {
     }
     @Test
     public void TestUpdateGoiBHKiTuDacBiet(){
-        GoiBaoHiem goiBaoHiem=new GoiBaoHiem(1,"Goi BH Test1 ^%^#%#",98667667,6);
+        GoiBaoHiem goiBaoHiem=new GoiBaoHiem(1,"Goi BH Test1 ^%^#%#",-100000,6);
         goiBaoHiemDAO.updateGoiBH(goiBaoHiem);
     }
+//    @Test
+//    public void TestUpdateGoiBHGiaTriAm(){
+//        GoiBaoHiem goiBaoHiem=new GoiBaoHiem(1,"Goi BH Test1 ^%^#%#",-10000,-6);
+//        goiBaoHiemDAO.updateGoiBH(goiBaoHiem);
+//    }
     @Test
-    public void TestUpdateGoiBHGiaTriAm(){
-        GoiBaoHiem goiBaoHiem=new GoiBaoHiem(1,"Goi BH Test1 ^%^#%#",-10000,-6);
-        goiBaoHiemDAO.updateGoiBH(goiBaoHiem);
-    }
-    @Test
-    public void TestUpdateGoiBHKhonTonTai(){
+    public void TestUpdateGoiBHKhongTonTai(){
         GoiBaoHiem goiBaoHiem=new GoiBaoHiem(999999,"Goi BH Test1 ^%^#%#",-10000,-6);
         goiBaoHiemDAO.updateGoiBH(goiBaoHiem);
     }

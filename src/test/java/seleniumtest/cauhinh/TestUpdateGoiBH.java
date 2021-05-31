@@ -20,7 +20,7 @@ public class TestUpdateGoiBH {
     private GoiBaoHiemDAO goiBaoHiemDAO=  new GoiBaoHiemDAOImpl();
 
     @Test
-    public void TestUpdateOk(){
+    public void TestUpdateGoiBinhThuong(){
         try {
             List<WebElement> elements = driver.findElements(By.cssSelector("a[class$=dark]"));
             elements.get(0).click();

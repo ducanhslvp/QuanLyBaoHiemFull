@@ -92,12 +92,12 @@
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <label>Giá tiền:</label> <input type="number" required="required" min="1" max="9999999999999" class="form-control"
+                                <label>Giá tiền:</label> <input type="number" required="required" min="1" max="999999999999" class="form-control"
                                                                 name="tien">
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <label>Thời gian đóng:</label> <input type="number" required="required" min="1" max="9999999999" class="form-control"
+                                <label>Thời gian đóng:</label> <input type="number" required="required" min="1" max="999" class="form-control"
                                                                       name="thoiGian">
                             </fieldset>
 

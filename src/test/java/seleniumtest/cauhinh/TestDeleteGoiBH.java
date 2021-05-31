@@ -21,7 +21,7 @@ public class TestDeleteGoiBH {
     private GoiBaoHiemDAO goiBaoHiemDAO=  new GoiBaoHiemDAOImpl();
 
     @Test
-    public void TestDeleteOk(){
+    public void TestDeleteGoiCoTheXoa(){
 
         try {
             List<WebElement> elements = driver.findElements(By.cssSelector("a[class*=btn-danger]"));
@@ -38,7 +38,7 @@ public class TestDeleteGoiBH {
         }
     }
     @Test
-    public void TestDeleteFail(){
+    public void TestDeleteGoiBHKhongTheXoa(){
 
         try {
             List<WebElement> elements = driver.findElements(By.cssSelector("a[class*=btn-danger]"));
@@ -86,6 +86,6 @@ public class TestDeleteGoiBH {
         for (GoiBaoHiem goiBaoHiem:listGoiBH)
             System.out.println(goiBaoHiem.toString());
 
-//        driver.quit();
+        driver.quit();
     }
 }

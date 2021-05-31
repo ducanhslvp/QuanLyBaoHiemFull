@@ -124,6 +124,6 @@ public class TestAddGoiBH {
         for (GoiBaoHiem goiBaoHiem:listGoiBH)
             System.out.println(goiBaoHiem.toString());
 
-//        driver.quit();
+        driver.quit();
     }
 }

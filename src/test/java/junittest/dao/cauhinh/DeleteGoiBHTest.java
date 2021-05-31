@@ -24,6 +24,10 @@ public class DeleteGoiBHTest {
     public void TestDeleteGoiBHKhongtontai(){
         goiBaoHiemDAO.deleteGoiBH(99999);
     }
+    @Test
+    public void TestDeleteGoiBHIDAm(){
+        goiBaoHiemDAO.deleteGoiBH(-1);
+    }
 
     @Before
     public void start(){
