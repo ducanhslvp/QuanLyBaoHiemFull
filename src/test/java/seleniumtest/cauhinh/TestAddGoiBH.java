@@ -26,6 +26,13 @@ public class TestAddGoiBH {
             driver.findElement(By.cssSelector("button[class$=success]")).click();
     }
     @Test
+    public void TestAddTrung(){
+        driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+        driver.findElement(By.name("tien")).sendKeys("999999");
+        driver.findElement(By.name("thoiGian")).sendKeys("36");
+        driver.findElement(By.cssSelector("button[class$=success]")).click();
+    }
+    @Test
     public void TestAddKyTuDacBiet(){
         driver.findElement(By.name("ten")).sendKeys("%^##^$@^$@$@^#@^");
         driver.findElement(By.name("tien")).sendKeys("999999");
@@ -39,56 +46,56 @@ public class TestAddGoiBH {
     }
     @Test
     public void TestAddNhapTienLaText(){
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH %$@&^%*^%&$^%#");
             driver.findElement(By.name("tien")).sendKeys("zdgfsdhf");
             driver.findElement(By.name("thoiGian")).sendKeys("36");
             driver.findElement(By.cssSelector("button[class$=success]")).click();
     }
     @Test
     public void TestAddNhapThangLaText(){
-        driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+        driver.findElement(By.name("ten")).sendKeys("Goi BH 4");
         driver.findElement(By.name("tien")).sendKeys("999999");
         driver.findElement(By.name("thoiGian")).sendKeys("sdhss");
         driver.findElement(By.cssSelector("button[class$=success]")).click();
     }
     @Test
     public void TestAddNhapTienAm(){
-        driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+        driver.findElement(By.name("ten")).sendKeys("Goi BH 6");
         driver.findElement(By.name("tien")).sendKeys("-1");
         driver.findElement(By.name("thoiGian")).sendKeys("999");
         driver.findElement(By.cssSelector("button[class$=success]")).click();
     }
     @Test
     public void TestAddNhapThangAm(){
-        driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+        driver.findElement(By.name("ten")).sendKeys("Goi BH 7");
         driver.findElement(By.name("tien")).sendKeys("0");
         driver.findElement(By.name("thoiGian")).sendKeys("-1");
         driver.findElement(By.cssSelector("button[class$=success]")).click();
     }
     @Test
     public void TestAddNhapThangSoThapPhan(){
-        driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+        driver.findElement(By.name("ten")).sendKeys("Goi BH 8");
         driver.findElement(By.name("tien")).sendKeys("9999");
         driver.findElement(By.name("thoiGian")).sendKeys("5.6");
         driver.findElement(By.cssSelector("button[class$=success]")).click();
     }
     @Test
     public void TestAddNhapTienSoThapPhan(){
-        driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+        driver.findElement(By.name("ten")).sendKeys("Goi BH 9");
         driver.findElement(By.name("tien")).sendKeys("99.5");
         driver.findElement(By.name("thoiGian")).sendKeys("999");
         driver.findElement(By.cssSelector("button[class$=success]")).click();
     }
     @Test
     public void TestUpdateNhapTienQuaLon(){
-        driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+        driver.findElement(By.name("ten")).sendKeys("Goi BH 10");
         driver.findElement(By.name("tien")).sendKeys("999999999999999999999");
         driver.findElement(By.name("thoiGian")).sendKeys("999");
         driver.findElement(By.cssSelector("button[class$=success]")).click();
     }
     @Test
     public void TestUpdateNhapThangQuaLon(){
-        driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+        driver.findElement(By.name("ten")).sendKeys("Goi BH 11");
         driver.findElement(By.name("tien")).sendKeys("99.5");
         driver.findElement(By.name("thoiGian")).sendKeys("99999999999999999999999999");
         driver.findElement(By.cssSelector("button[class$=success]")).click();

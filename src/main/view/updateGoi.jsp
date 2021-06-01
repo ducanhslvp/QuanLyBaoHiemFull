@@ -77,21 +77,22 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="card-body">
+                        <h6 style="color:red;">    ${message}</h6>
                         <form action="update" method="post">
 
                             <fieldset class="form-group" >
-                                <label>Tên:</label>
+                                <label>Tên Gói BH:</label>
                                 <input type="text" class="form-control"
                                        value="<%= ((GoiBaoHiem) request.getAttribute("goiBH")).getTen() %>" name="ten" required="required">
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <label>Giá tiền:</label> <input type="number" min="1" max="999999999999" required="required" class="form-control"
-                                           value="<%= ((GoiBaoHiem) request.getAttribute("goiBH")).getTien()+"" %>" name="tien">
+                                <label>Giá tiền(VND):</label> <input type="number" min="1" max="999999999999" required="required" class="form-control"
+                                           value="<%= ((GoiBaoHiem) request.getAttribute("goiBH")).getTien() %>" name="tien">
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <label>Thời gian đóng:</label> <input type="number" min="1" max="999" required="required" class="form-control"
+                                <label>Thời gian đóng(tháng):</label><input type="number" min="1" max="999" required="required" class="form-control"
                                            value="<%= ((GoiBaoHiem) request.getAttribute("goiBH")).getThoiGian() %>" name="thoiGian">
                             </fieldset>
 

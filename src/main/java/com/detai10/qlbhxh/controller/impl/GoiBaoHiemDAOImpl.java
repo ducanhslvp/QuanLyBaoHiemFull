@@ -84,5 +84,20 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
         return kt;
     }
 
+    public boolean check(String name,int id) {
+        boolean kt=true;
+        for (GoiBaoHiem goiBaoHiem: getListGoiBH())
+            if ((goiBaoHiem.getTen().equals(name)) && (goiBaoHiem.getId()!=id)) kt=false;
+        return kt;
+    }
+    public GoiBaoHiem getGoiById(int id) {
+        List<GoiBaoHiem> goiBaoHiems=getListGoiBH();
+        for (int i=0;i<goiBaoHiems.size();i++) {
+            if (goiBaoHiems.get(i).getId() == id)
+
+                return goiBaoHiems.get(i);
+        }
+        return null;
+    }
 
 }

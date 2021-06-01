@@ -39,6 +39,25 @@ public class TestUpdateGoiBH {
         }
     }
     @Test
+    public void TestUpdateGoiTrung(){
+        try {
+            List<WebElement> elements = driver.findElements(By.cssSelector("a[class$=dark]"));
+            elements.get(0).click();
+
+            driver.findElement(By.name("ten")).clear();
+            driver.findElement(By.name("ten")).sendKeys("Goi BH 1");
+
+            driver.findElement(By.name("tien")).clear();
+            driver.findElement(By.name("tien")).sendKeys("999999");
+
+            driver.findElement(By.name("thoiGian")).clear();
+            driver.findElement(By.name("thoiGian")).sendKeys("36");
+
+            driver.findElement(By.cssSelector("button[class$=success]")).click();
+        }finally {
+        }
+    }
+    @Test
     public void TestUpdateKyTuDacBiet(){
         try {
             List<WebElement> elements = driver.findElements(By.cssSelector("a[class$=dark]"));
@@ -82,7 +101,7 @@ public class TestUpdateGoiBH {
             elements.get(0).click();
 
             driver.findElement(By.name("ten")).clear();
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH %&$^%#");
 
             driver.findElement(By.name("tien")).clear();
             driver.findElement(By.name("tien")).sendKeys("zdgfsdhf");
@@ -101,7 +120,7 @@ public class TestUpdateGoiBH {
             elements.get(0).click();
 
             driver.findElement(By.name("ten")).clear();
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH 5");
 
             driver.findElement(By.name("tien")).clear();
             driver.findElement(By.name("tien")).sendKeys("55599");
@@ -120,7 +139,7 @@ public class TestUpdateGoiBH {
             elements.get(0).click();
 
             driver.findElement(By.name("ten")).clear();
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH 6");
 
             driver.findElement(By.name("tien")).clear();
             driver.findElement(By.name("tien")).sendKeys("-1");
@@ -139,7 +158,7 @@ public class TestUpdateGoiBH {
             elements.get(0).click();
 
             driver.findElement(By.name("ten")).clear();
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH 7");
 
             driver.findElement(By.name("tien")).clear();
             driver.findElement(By.name("tien")).sendKeys("99999");
@@ -160,7 +179,7 @@ public class TestUpdateGoiBH {
             elements.get(0).click();
 
             driver.findElement(By.name("ten")).clear();
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH 8");
 
             driver.findElement(By.name("tien")).clear();
             driver.findElement(By.name("tien")).sendKeys("999.9");
@@ -181,7 +200,7 @@ public class TestUpdateGoiBH {
             elements.get(0).click();
 
             driver.findElement(By.name("ten")).clear();
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH 9");
 
             driver.findElement(By.name("tien")).clear();
             driver.findElement(By.name("tien")).sendKeys("99999");
@@ -202,7 +221,7 @@ public class TestUpdateGoiBH {
             elements.get(0).click();
 
             driver.findElement(By.name("ten")).clear();
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH 10");
 
             driver.findElement(By.name("tien")).clear();
             driver.findElement(By.name("tien")).sendKeys("999999999999999999999999");
@@ -221,7 +240,7 @@ public class TestUpdateGoiBH {
             elements.get(0).click();
 
             driver.findElement(By.name("ten")).clear();
-            driver.findElement(By.name("ten")).sendKeys("Goi BH %$$@#$@&^%*^%&$^%#");
+            driver.findElement(By.name("ten")).sendKeys("Goi BH 11");
 
             driver.findElement(By.name("tien")).clear();
             driver.findElement(By.name("tien")).sendKeys("99999");
