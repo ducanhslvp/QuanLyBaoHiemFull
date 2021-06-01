@@ -17,9 +17,13 @@ public class ConnectionDAO {
             try {
                 Class.forName(dbClass);
                 connection = DriverManager.getConnection (jdbcURL, jdbcUsername, jdbcPassword);
+
+//                connection.setAutoCommit(false);
+
             }catch(Exception e) {
                 e.printStackTrace();
             }
         }
+
     }
 }

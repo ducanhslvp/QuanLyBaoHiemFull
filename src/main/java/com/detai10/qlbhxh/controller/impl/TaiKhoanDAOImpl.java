@@ -35,12 +35,6 @@ public class TaiKhoanDAOImpl extends ConnectionDAO implements TaiKhoanDAO {
 
 		return taiKhoan;
 	}
-	@Test
-	public void Test1(){
-		TaiKhoan taiKhoan=new TaiKhoan(1,"abc","abc","ducanh","hanoi","0945345","1");
-		System.out.println(checkLogin(taiKhoan));
-	}
-
 
 	public List<TaiKhoan> getListTaiKhoan() {
 		List<TaiKhoan> taiKhoans = new ArrayList<>();
@@ -110,6 +104,8 @@ public class TaiKhoanDAOImpl extends ConnectionDAO implements TaiKhoanDAO {
 
 		return listTaikhoan;
 	}
+
+
 	public List<String> getListThang() {
 		List<String> listDiaChi = new ArrayList<>();
 		ResultSet rs = null;
@@ -153,9 +149,15 @@ public class TaiKhoanDAOImpl extends ConnectionDAO implements TaiKhoanDAO {
 
 		return listTaikhoan;
 	}
-	@Override
-	public void addCustomer(TaiKhoan taiKhoan) {
-
+	@Test public void Test1(){
+		System.out.println(getTKbyThang("2021/04"));
 	}
+	@Test public void Test2(){
+		System.out.println(getTKbyThang("2021/07"));
+	}
+	@Test public void Test3(){
+		System.out.println(getTKbyThang("asdas%%%@"));
+	}
+
 
 }

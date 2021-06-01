@@ -98,16 +98,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="taikhoan" items="${list}">
+                                <c:forEach var="goi" items="${list}">
                                     <tr>
-                                        <td><c:out value="${taikhoan.id}" /></td>
-                                        <td><c:out value="${taikhoan.ten}" /></td>
-                                        <td><c:out value="${taikhoan.tien}" /></td>
-                                        <td><c:out value="${taikhoan.thoiGian}" /></td>
+                                        <td><c:out value="${goi.id}" /></td>
+                                        <td><c:out value="${goi.ten}" /></td>
+                                        <td><c:out value="${goi.tien}" /></td>
+                                        <td><c:out value="${goi.thoiGian}" /></td>
                                         <td>
-                                            <a href="updateGoi?id=<c:out value='${taikhoan.id}'/>"
+                                            <a href="updateGoi?id=<c:out value='${goi.id}'/>"
                                                class="btn btn-dark">Sửa</a>
-                                            <a class="btn btn-danger" href="deleteGoi?id=<c:out value='${taikhoan.id}'/>">Xóa</a>
+                                            <a class="btn btn-danger" href="deleteGoi?id=<c:out value='${goi.id}'/>">Xóa</a>
 
                                         </td>
                                     </tr>

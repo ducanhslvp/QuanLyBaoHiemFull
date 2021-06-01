@@ -2,8 +2,11 @@ package com.detai10.qlbhxh.controller.servlet;
 
 import com.detai10.qlbhxh.controller.dao.BaoHiemDAO;
 import com.detai10.qlbhxh.controller.dao.GoiBaoHiemDAO;
+import com.detai10.qlbhxh.controller.dao.TaiKhoanDAO;
 import com.detai10.qlbhxh.controller.impl.BaoHiemDAOImpl;
 import com.detai10.qlbhxh.controller.impl.GoiBaoHiemDAOImpl;
+import com.detai10.qlbhxh.controller.impl.TaiKhoanDAOImpl;
+import com.detai10.qlbhxh.model.GoiBHString;
 import com.detai10.qlbhxh.model.GoiBaoHiem;
 import com.detai10.qlbhxh.model.TaiKhoan;
 
@@ -25,6 +28,16 @@ public class GoiBaoHiemServlet extends HttpServlet {
     private int idGoi;
     private boolean ktDelete=true;
     HttpSession session;
+
+    public void SetSession() {
+        TaiKhoan taiKhoan=new TaiKhoan();
+        taiKhoan.setUsername("a");
+        taiKhoan.setPassword("a");
+        TaiKhoanDAO taiKhoanDAO=new TaiKhoanDAOImpl();
+        System.out.println( taiKhoanDAO.checkLogin(taiKhoan)+"set sesion");
+        session.setAttribute("customer", taiKhoanDAO.checkLogin(taiKhoan));
+    }
+
     public void init() {
     }
 
@@ -83,11 +96,20 @@ public class GoiBaoHiemServlet extends HttpServlet {
         String ten = request.getParameter("ten");
         float tien = Float.parseFloat(request.getParameter("tien"));
         int thoiGian = Integer.parseInt(request.getParameter("thoiGian"));
-        GoiBaoHiem goiBaoHiem=new GoiBaoHiem(1,ten,tien,thoiGian);
-        System.out.println(ten+" ten goi bao hiem");
-        goiBaoHiemDAO.addGoiBH(goiBaoHiem);
 
-        response.sendRedirect("cauhinh");
+        if (goiBaoHiemDAO.check(ten,0)==false)    {
+            request.setAttribute("message", "Gói bảo hiểm bị trùng tên");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("addGoiBH.jsp");
+            dispatcher.forward(request, response);
+        }else{
+            GoiBaoHiem goiBaoHiem=new GoiBaoHiem(1,ten,tien,thoiGian);
+            System.out.println(ten+" ten goi bao hiem");
+            goiBaoHiemDAO.addGoiBH(goiBaoHiem);
+
+            response.sendRedirect("cauhinh");
+        }
+
+
     }
     private void updateGoi(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
@@ -95,16 +117,10 @@ public class GoiBaoHiemServlet extends HttpServlet {
         idGoi = id;
         goiBaoHiems = goiBaoHiemDAO.getListGoiBH();
         System.out.println(id);
-        GoiBaoHiem goiBaoHiem = null;
-        for (int i=0;i<goiBaoHiems.size();i++) {
-            if (goiBaoHiems.get(i).getId() == id)
 
-                goiBaoHiem = goiBaoHiems.get(i);
-        }
-            System.out.println(goiBaoHiem.getTen()+"ten");
-            request.setAttribute("goiBH", goiBaoHiem);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("updateGoi.jsp");
-            dispatcher.forward(request, response);
+        request.setAttribute("goiBH", goiBaoHiemDAO.getGoiById(id));
+        RequestDispatcher dispatcher = request.getRequestDispatcher("updateGoi.jsp");
+        dispatcher.forward(request, response);
 
     }
     private void update(HttpServletRequest request, HttpServletResponse response)
@@ -113,10 +129,20 @@ public class GoiBaoHiemServlet extends HttpServlet {
         String ten = request.getParameter("ten");
         float tien = Float.parseFloat(request.getParameter("tien"));
         int thoiGian = Integer.parseInt(request.getParameter("thoiGian"));
-        GoiBaoHiem goiBaoHiem=new GoiBaoHiem(idGoi,ten,tien,thoiGian);
 
-        goiBaoHiemDAO.updateGoiBH(goiBaoHiem);
-        response.sendRedirect("cauhinh");
+        if (goiBaoHiemDAO.check(ten,idGoi)==false)    {
+            goiBaoHiems = goiBaoHiemDAO.getListGoiBH();
+            request.setAttribute("list", goiBaoHiems);
+            request.setAttribute("message", "Gói bảo hiểm bị trùng tên");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("cauhinh.jsp");
+            dispatcher.forward(request, response);
+        }else {
+            GoiBaoHiem goiBaoHiem = new GoiBaoHiem(idGoi, ten, tien, thoiGian);
+
+            goiBaoHiemDAO.updateGoiBH(goiBaoHiem);
+            response.sendRedirect("cauhinh");
+        }
+
     }
     private void deleteGoi(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {

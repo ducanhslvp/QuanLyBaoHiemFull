@@ -33,6 +33,7 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
         return listGoiBH;
     }
 
+
     public void addGoiBH(GoiBaoHiem goiBaoHiem) {
 		// TODO - implement CustomerDAOImpl.addCustomer
 		String sql = "INSERT INTO `goibaohiem` (`Ten`, `Tien`, `ThoiGian`) VALUES (?,?,?)";
@@ -49,6 +50,8 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
 			e.printStackTrace();
 		}
 	}
+
+
     public void updateGoiBH(GoiBaoHiem goiBaoHiem) {
         // TODO - implement CustomerDAOImpl.addCustomer
         String sql = "UPDATE `goibaohiem` SET `Ten` = ?, `Tien` = ?, `ThoiGian` = ? WHERE (`Id` = ?)";
@@ -65,6 +68,7 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
             e.printStackTrace();
         }
     }
+
     public boolean deleteGoiBH(int id) {
         // TODO - implement CustomerDAOImpl.addCustomer
         String sql = "DELETE FROM goibaohiem WHERE id=?";
@@ -80,5 +84,20 @@ public class GoiBaoHiemDAOImpl extends ConnectionDAO implements GoiBaoHiemDAO  {
         return kt;
     }
 
+    public boolean check(String name,int id) {
+        boolean kt=true;
+        for (GoiBaoHiem goiBaoHiem: getListGoiBH())
+            if ((goiBaoHiem.getTen().equals(name)) && (goiBaoHiem.getId()!=id)) kt=false;
+        return kt;
+    }
+    public GoiBaoHiem getGoiById(int id) {
+        List<GoiBaoHiem> goiBaoHiems=getListGoiBH();
+        for (int i=0;i<goiBaoHiems.size();i++) {
+            if (goiBaoHiems.get(i).getId() == id)
+
+                return goiBaoHiems.get(i);
+        }
+        return null;
+    }
 
 }
