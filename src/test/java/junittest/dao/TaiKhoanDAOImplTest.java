@@ -5,6 +5,8 @@ import com.detai10.qlbhxh.controller.impl.TaiKhoanDAOImpl;
 import com.detai10.qlbhxh.model.TaiKhoan;
 import org.junit.Test;
 
+import java.util.List;
+
 public class TaiKhoanDAOImplTest {
     private TaiKhoanDAO taiKhoanDAO=new TaiKhoanDAOImpl();
     //=====================JUnit Test cho chuc nang login==========================
@@ -38,5 +40,26 @@ public class TaiKhoanDAOImplTest {
         System.out.println(taiKhoanDAO.checkLogin(taiKhoan));
     }
 
+
+    @Test
+    public void TestgetListDiaChi(){
+        List<String> listDiaChi= taiKhoanDAO.getListDiaChi();
+        for(String list:listDiaChi)
+            System.out.println(list);
+    }
+
+    @Test
+    public void TestgetListThang(){
+        List<String> listThang=taiKhoanDAO.getListThang();
+        for(String list:listThang)
+            System.out.println(list);
+    }
+
+    @Test
+    public void TestgetListTaiKhoan(){
+        List<TaiKhoan> listTK=taiKhoanDAO.getListTaiKhoan();
+        for(TaiKhoan tk:listTK)
+            System.out.println(tk);
+    }
 
 }

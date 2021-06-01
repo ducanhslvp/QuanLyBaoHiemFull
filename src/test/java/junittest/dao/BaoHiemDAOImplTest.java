@@ -19,4 +19,5 @@ public class BaoHiemDAOImplTest {
     public void TestgetBaoHiem3(){
         System.out.println(baoHiemDAO.getBaoHiem( 9));
     }
+
 }
