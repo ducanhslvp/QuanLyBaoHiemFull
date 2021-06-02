@@ -10,6 +10,6 @@ public interface GoiBaoHiemDAO {
     boolean deleteGoiBH(int id);
 
     void updateGoiBH(GoiBaoHiem goiBaoHiem);
-    boolean check(String name,int d);
+    boolean check(String name,int id);
     GoiBaoHiem getGoiById(int id);
 }
