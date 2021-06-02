@@ -83,7 +83,8 @@
 
                     </div>
                     <br>
-                    <h6 style="color:red;">    ${message}</h6>
+                    <h5 style="color:red;">${message}</h5>
+                    <h5 style="color:green;">${message2}</h5>
                     <div class="card-body">
                         <div class="table-responsive">
 
@@ -91,8 +92,8 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Tên</th>
-                                    <th>Số tiền</th>
+                                    <th>Tên gói BH</th>
+                                    <th>Số tiền(VND)</th>
                                     <th>Thời gian</th>
                                     <th>Hành động</th>
                                 </tr>

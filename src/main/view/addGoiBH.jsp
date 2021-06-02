@@ -79,9 +79,9 @@
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
-                    <h6 style="color:red;">    ${message}</h6>
-                    <div class="card-header py-3">
 
+                    <div class="card-header py-3">
+                        <h5 style="color:red;">    ${message}</h5>
                         <div class="card-body">
                         <form action="addGoiBH" method="post">
 
@@ -90,16 +90,16 @@
 <%--                            </caption>--%>
                             <fieldset class="form-group" >
                                 <label>Tên gói BH:</label> <input type="text" class="form-control"
-                                                           name="ten" required="required">
+                                                           name="ten" required="required" value="${ten}">
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <label>Giá tiền (VND) *:</label> <input type="number" required="required" min="1" max="999999999999" class="form-control"
+                                <label>Giá tiền (VND):</label> <input type="number" value="${tien}" required="required" min="1" max="999999999999" class="form-control"
                                                                 name="tien">
                             </fieldset>
 
                             <fieldset class="form-group">
-                                <label>Thời gian đóng (Tháng) *:</label> <input type="number" required="required" min="1" max="999" class="form-control"
+                                <label>Thời gian đóng (Tháng):</label> <input type="number" value="${thoiGian}" required="required" min="1" max="999" class="form-control"
                                                                       name="thoiGian">
                             </fieldset>
 

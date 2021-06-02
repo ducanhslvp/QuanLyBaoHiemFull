@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class ConnectionDAO {
     protected String jdbcURL = "jdbc:mysql://localhost:3306/qlbhxh";
@@ -18,12 +19,19 @@ public class ConnectionDAO {
                 Class.forName(dbClass);
                 connection = DriverManager.getConnection (jdbcURL, jdbcUsername, jdbcPassword);
 
-//                connection.setAutoCommit(false);
+                connection.setAutoCommit(false);
 
             }catch(Exception e) {
                 e.printStackTrace();
             }
         }
 
+    }
+    public void RollBack(){
+        try {
+            connection.rollback();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

@@ -77,7 +77,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="card-body">
-                        <h6 style="color:red;">    ${message}</h6>
+                        <h5 style="color:red;">    ${message}</h5>
                         <form action="update" method="post">
 
                             <fieldset class="form-group" >

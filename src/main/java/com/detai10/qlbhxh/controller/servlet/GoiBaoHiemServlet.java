@@ -82,7 +82,7 @@ public class GoiBaoHiemServlet extends HttpServlet {
         request.setAttribute("list", goiBaoHiems);
 
         if (ktDelete==false){
-            request.setAttribute("message", "Không thể xóa gói này do! Gói đã nằm trong một bảo hiểm");
+            request.setAttribute("message", "(*) Không thể xóa gói này do! Gói đã nằm trong một bảo hiểm");
         }
         ktDelete=true;
 
@@ -98,17 +98,24 @@ public class GoiBaoHiemServlet extends HttpServlet {
         int thoiGian = Integer.parseInt(request.getParameter("thoiGian"));
 
         if (goiBaoHiemDAO.check(ten,0)==false)    {
-            request.setAttribute("message", "Gói bảo hiểm bị trùng tên");
+            request.setAttribute("message", "(*) Gói bảo hiểm bị trùng tên");
+            request.setAttribute("ten", ten);
+            request.setAttribute("tien", tien);
+            request.setAttribute("thoiGian", thoiGian);
             RequestDispatcher dispatcher = request.getRequestDispatcher("addGoiBH.jsp");
             dispatcher.forward(request, response);
         }else{
             GoiBaoHiem goiBaoHiem=new GoiBaoHiem(1,ten,tien,thoiGian);
             System.out.println(ten+" ten goi bao hiem");
             goiBaoHiemDAO.addGoiBH(goiBaoHiem);
-
-            response.sendRedirect("cauhinh");
+//            request.setAttribute("message2", "Thêm gói thành công");
+//            response.sendRedirect("cauhinh");
+            goiBaoHiems = goiBaoHiemDAO.getListGoiBH();
+            request.setAttribute("list", goiBaoHiems);
+            request.setAttribute("message2", "- Thêm gói thành công");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("cauhinh.jsp");
+            dispatcher.forward(request, response);
         }
-
 
     }
     private void updateGoi(HttpServletRequest request, HttpServletResponse response)
@@ -131,16 +138,21 @@ public class GoiBaoHiemServlet extends HttpServlet {
         int thoiGian = Integer.parseInt(request.getParameter("thoiGian"));
 
         if (goiBaoHiemDAO.check(ten,idGoi)==false)    {
-            goiBaoHiems = goiBaoHiemDAO.getListGoiBH();
-            request.setAttribute("list", goiBaoHiems);
-            request.setAttribute("message", "Gói bảo hiểm bị trùng tên");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("cauhinh.jsp");
+            request.setAttribute("goiBH", goiBaoHiemDAO.getGoiById(idGoi));
+            request.setAttribute("message", " (*) Tên gói bảo hiểm bị trùng tên");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("updateGoi.jsp");
             dispatcher.forward(request, response);
         }else {
             GoiBaoHiem goiBaoHiem = new GoiBaoHiem(idGoi, ten, tien, thoiGian);
 
             goiBaoHiemDAO.updateGoiBH(goiBaoHiem);
-            response.sendRedirect("cauhinh");
+//            request.setAttribute("message2", "Cập nhật gói thành công");
+//            response.sendRedirect("cauhinh");
+            goiBaoHiems = goiBaoHiemDAO.getListGoiBH();
+            request.setAttribute("list", goiBaoHiems);
+            request.setAttribute("message2", "- Cập nhật gói thành công");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("cauhinh.jsp");
+            dispatcher.forward(request, response);
         }
 
     }
@@ -148,11 +160,17 @@ public class GoiBaoHiemServlet extends HttpServlet {
             throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
         boolean kt=goiBaoHiemDAO.deleteGoiBH(id);
-        if (kt==true)
-            response.sendRedirect("cauhinh");
-        else {
+        if (kt==true) {
+//            response.sendRedirect("cauhinh");
+//            request.setAttribute("message2", "Xóa gói thành công");
+            goiBaoHiems = goiBaoHiemDAO.getListGoiBH();
+            request.setAttribute("list", goiBaoHiems);
+            request.setAttribute("message2", "- Xóa gói thành công");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("cauhinh.jsp");
+            dispatcher.forward(request, response);
+        }else {
             ktDelete=false;
-            request.setAttribute("message", "Không thể xóa gói này do! Gói đã nằm trong một bảo hiểm");
+            request.setAttribute("message", "(*) Không thể xóa gói này do! Gói đã nằm trong một bảo hiểm");
             response.sendRedirect("cauhinh");
         }
     }
